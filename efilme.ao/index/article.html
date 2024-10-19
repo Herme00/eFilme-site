@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFilme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">eFilme</div>
+    </header>
+
+    <article id="movieArticle">
+        <div class="movie-container">
+            <div class="movie-poster">
+                <img id="moviePoster" src="" alt="Movie Poster">
+            </div>
+            <div class="movie-details">
+                <h1 id="movieTitle"></h1>
+                <p id="movieDescription"></p>
+
+                <div class="movie-info">
+                    <p><strong>Gênero:</strong> <span id="movieCategory"></span></p>
+                    <p><strong>Duração:</strong> 2h 23min</p>
+                    <p><strong>Lançamento:</strong> 2012</p>
+                </div>
+
+                <div class="watch-button">
+                    <button id="watchMovieBtn">Assistir agora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movie Trailer or Full Movie -->
+        <div id="moviePlayer" class="movie-player" style="display: none;">
+            <iframe id="movieIframe" width="100%" height="500" src="" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 eFilme - Watch Movies Online</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fetch movie data from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+
+        const movie = movies.find(m => m.id == movieId);
+
+        if (movie) {
+            document.getElementById('movieTitle').textContent = movie.title;
+            document.getElementById('movieDescription').textContent = movie.description;
+            document.getElementById('moviePoster').src = movie.image;
+            document.getElementById('movieCategory').textContent = movie.category;
+
+            // Example YouTube trailer link (you can update this for the actual movie)
+            document.getElementById('movieIframe').src = "https://www.youtube.com/embed/eOrNdBpGMv8";
+        }
+
+        // Show/hide movie player
+        document.getElementById('watchMovieBtn').addEventListener('click', function() {
+            const moviePlayer = document.getElementById('moviePlayer');
+            if (moviePlayer.style.display === 'none') {
+                moviePlayer.style.display = 'block';
+                this.textContent = 'Hide Player';
+            } else {
+                moviePlayer.style.display = 'none';
+                this.textContent = 'Watch Now';
+            }
+        });
+    </script>
+</body>
+</html>

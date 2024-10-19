@@ -1,0 +1,292 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+body {
+  background-image: url(img/pexels-chevanon-1335971.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Estilo básico para o header liso */
+header {
+  background-color: none; /* Cor de fundo sólida e elegante */
+  padding: 15px 0; /* Espaçamento interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;  
+  max-width: 1200px; /* Max-width para limitar a largura do conteúdo */
+  margin: 0 auto;    /* Centraliza o conteúdo */
+  padding: 0 20px;   /* Espaçamento nas laterais */
+  
+}
+.logo{
+    display: flex;
+    
+}
+.logoRD{
+  display: flex;
+}
+.logo1{
+width: 30px;
+height: 30px;
+border-radius: 50%;
+}
+
+.logo h1 {
+  color: white; /* Cor do texto branco */
+  font-size: 1.8rem; /* Tamanho do logo */
+  font-weight: bold; /* Texto em negrito */
+  margin: 0; /* Remove margens extras */
+  
+}
+.menu-icon{
+display: none;
+}
+.close-icon{
+display: none;
+}
+
+nav ul {
+  list-style: none; /* Remove bullets */
+  display: flex;
+  gap: 20px; /* Espaçamento entre itens */
+}
+
+nav ul li {
+  margin: 0; /* Remove margem padrão */
+}
+
+nav ul li a {
+  color: white; /* Cor do texto branco */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: 1.4rem; /* Tamanho do texto */
+  font-weight: 500; /* Seminegrito */
+  /* Transição suave na cor */
+}
+
+nav ul li a::after{
+  content: "";
+  background-color: white;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.5s; 
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Efeito hover com cor verde suave */
+}
+/*estilos index*/
+
+.section-videos {
+  padding: 40px 20px;
+  text-align: center;
+  }
+  
+  .section-videos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  }
+  
+  .videos-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  }
+  
+  .video-item {
+  display: block;
+  background-color: black;
+  padding: 20px;
+  
+  max-width: 30%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  }
+  
+  .video-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  }
+  
+  .video-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  }
+  
+  .video-item p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  }
+  
+  
+  .button-assistir {
+  padding: 10px 20px;
+  background: rgb(66, 65, 65);
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  }
+  
+  .button-assistir:hover {
+  background: #000000;
+  }
+  /*buscar videos*/
+  .section-buscar-livros {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background: #172279;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#bookResults {
+    margin-top: 20px;
+}
+
+.book-item {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.book-item h3 {
+    margin-bottom: 5px;
+}
+
+.book-item p {
+    margin-bottom: 10px;
+}
+
+.book-item a {
+    text-decoration: none;
+    color: #172279;
+    padding: 10px;
+    border: 1px solid #172279;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.book-item a:hover {
+    background: #172279;
+    color: white;
+}
+
+
+/*estilos tel*/
+
+@media (max-width: 768px) {
+
+  .header-container {
+    flex-direction: column; /* Em telas pequenas, organiza verticalmente */
+}
+
+
+    
+  
+      ul  {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      flex-direction: column; /* Links da nav em pilha */
+      background-color: none;
+      width: 100%;
+      height: 100%;
+      align-items: center; /* Centraliza links */
+      grid-column: 10px;
+      justify-content: center;/* Diminui o espaço entre itens */
+      clip-path: circle(0% at 100% 0);
+      transition: 0.7s;
+  
+    }
+    
+      .open{
+        
+  
+          clip-path: circle(141.1% at 100% 0%);
+          
+      }
+     
+    
+    .menu-icon{
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 28px;
+      justify-content: left;
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+  
+    }
+    .close-icon{
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 28px;
+      justify-content: left;
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+  
+    }
+      .close{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        justify-content: left;
+        margin: 0;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      #close{
+        font-size: 30px;
+        padding: 10%;
+        border-radius: 50%;
+        
+      }
+      
+  
+  }

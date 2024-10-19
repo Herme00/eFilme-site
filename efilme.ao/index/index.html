@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFilme - Movie Streaming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header and Search Bar -->
+    <header>
+        <div class="logo">eFilme</div>
+        <input type="text" id="searchBar" placeholder="Search for a movie...">
+    </header>
+
+    <!-- Movie Categories Section -->
+    <section id="categories">
+        <h2 style="color: white;">Categoria</h2>
+        <div class="category-buttons">
+            <button onclick="filterMovies('All')">Todos</button>
+            <button onclick="filterMovies('Action')">Action</button>
+            <button onclick="filterMovies('Comedy')">Comedy</button>
+            <button onclick="filterMovies('Horror')">Horror</button>
+        </div>
+    </section>
+    <section id="movieCarousel" class="carousel">
+        <div class="carousel-inner">
+            <!-- Movie 1 -->
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x450" alt="Movie 1">
+                <div class="carousel-caption">
+                    <h3>The Avengers</h3>
+                    <p>A superhero team to save the world!</p>
+                </div>
+            </div>
+            <!-- Movie 2 -->
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x450" alt="Movie 2">
+                <div class="carousel-caption">
+                    <h3>Inception</h3>
+                    <p>A mind-bending thriller by Christopher Nolan.</p>
+                </div>
+            </div>
+            <!-- Movie 3 -->
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x450" alt="Movie 3">
+                <div class="carousel-caption">
+                    <h3>The Hangover</h3>
+                    <p>A comedy adventure after a wild night.</p>
+                </div>
+            </div>
+            <!-- Movie 4 -->
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x450" alt="Movie 4">
+                <div class="carousel-caption">
+                    <h3>The Conjuring</h3>
+                    <p>A chilling horror based on real events.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+    </section>
+
+    <!-- Movies Section -->
+    <section id="movies">
+        <h2>Filmes</h2>
+        <div id="movieList" class="movie-grid"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>contato</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Nomeour Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 eFilme - Watch Movies Online</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
